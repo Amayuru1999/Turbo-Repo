@@ -8,11 +8,11 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
 
-  // Enable CORS for any origin
+  // Enable CORS for specific origins
   app.enableCors({
-    origin: '*', // Allows requests from any origin
+    origin: 'https://turbo-repo-frontend.vercel.app', // Frontend URL
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', // Allowed methods
-    credentials: true // Allows credentials (cookies, authorization headers, etc.) to be included in the requests
+    credentials: true // Allow credentials (cookies, authorization headers, etc.)
   });
 
   await app.listen(3002);
