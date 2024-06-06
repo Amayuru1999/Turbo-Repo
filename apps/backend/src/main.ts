@@ -10,7 +10,7 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin: 'https://turbo-repo-frontend.vercel.app', // Replace with your frontend URL
+    origin: '*', // Replace with your frontend URL
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true // Allows cookies and other credentials to be sent with requests
   });
