@@ -5,7 +5,7 @@ import { User } from "../models/User";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "/auth",
+    baseUrl: "https://turbo-repo-backend.vercel.app/auth",
   }),
   endpoints: (build) => ({
     login: build.mutation<User, LoginRequest>({
