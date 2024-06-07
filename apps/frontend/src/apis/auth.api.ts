@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { LoginRequest } from "./../dto/login-request.dto";
+import { LoginRequest } from "../dto/login-request.dto";
 import { User } from "../models/User";
 
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://turbo-repo-backend.vercel.app/auth",
+    baseUrl: `${process.env.REACT_APP_API_URL}/auth`,
   }),
   endpoints: (build) => ({
     login: build.mutation<User, LoginRequest>({

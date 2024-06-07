@@ -5,7 +5,7 @@ import { User } from "../models/User"
 export const usersApi=createApi({
     reducerPath:"usersApi",
     baseQuery: fetchBaseQuery({
-        baseUrl:'https://turbo-repo-backend.vercel.app/users'
+        baseUrl:`${process.env.REACT_APP_API_URL}/users`
     }),
     endpoints:(build)=>({
         createUser:build.mutation<User,CreateUserRequest>({
@@ -21,4 +21,4 @@ export const usersApi=createApi({
     }),
 });
 
-export const {useCreateUserMutation,useGetUserQuery} = usersApi;
+export const {useCreateUserMutation,useGetUserQuery} = usersApi;    
